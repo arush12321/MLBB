@@ -10,12 +10,27 @@
             color: white;
             text-align: center;
             margin: 0;
-            padding-bottom: 60px; /* space for footer */
+            padding: 0;
         }
 
         h1 {
             color: gold;
             letter-spacing: 3px;
+            margin-top: 20px;
+        }
+
+        /* Animation wrapper */
+        .animate-wrapper {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .animate-wrapper:nth-of-type(1) { animation-delay: 0.1s; }
+        .animate-wrapper:nth-of-type(2) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .card {
@@ -25,38 +40,28 @@
             margin: 20px auto;
             width: 70%;
             box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
         }
 
-        .card h2 {
-            color: #38bdf8;
-        }
+        .card h2 { color: #38bdf8; }
+        .card p { font-size: 16px; line-height: 1.5; }
+        img { width: 200px; border-radius: 10px; margin-bottom: 10px; }
 
-        .card p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
+        /* Hover works perfectly now */
+        .card:hover { transform: scale(1.03); }
 
-        img {
-            width: 200px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-            transition: 0.3s;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 15px;
             background-color: #1e293b;
             color: #38bdf8;
             font-size: 14px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: 40px;
+
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.8s;
         }
     </style>
 </head>
@@ -66,27 +71,31 @@
 <h1>MLBB HERO SHOWCASE</h1>
 
 <!-- Minsithar -->
-<div class="card">
-    <h2>Minsithar</h2>
-    <img src="minsithar.png" alt="Minsithar">
-    <p>
-        Minsithar is a fighter with strong crowd control and powerful late-game damage.
-        He can melt tanks and eliminate squishy heroes easily.
-        However, he can be countered by heavy CC heroes.
-        He deals physical damage.
-    </p>
+<div class="animate-wrapper">
+    <div class="card">
+        <h2>Minsithar</h2>
+        <img src="minsithar.png" alt="Minsithar">
+        <p>
+            Minsithar is a fighter with strong crowd control and powerful late-game damage.
+            He can melt tanks and eliminate squishy heroes easily.
+            However, he can be countered by heavy CC heroes.
+            He deals physical damage.
+        </p>
+    </div>
 </div>
 
 <!-- Johnson -->
-<div class="card">
-    <h2>Johnson</h2>
-    <img src="johnson.png" alt="Johnson">
-    <p>
-        Johnson is a tank/support hero. His ultimate allows him to transform into a car
-        and carry a teammate. When he crashes into enemies, they take magic damage and
-        get stunned for a short period of time.
-        He deals magic damage.
-    </p>
+<div class="animate-wrapper">
+    <div class="card">
+        <h2>Johnson</h2>
+        <img src="johnson.png" alt="Johnson">
+        <p>
+            Johnson is a tank/support hero. His ultimate allows him to transform into a car
+            and carry a teammate. When he crashes into enemies, they take magic damage and
+            get stunned for a short period of time.
+            He deals magic damage.
+        </p>
+    </div>
 </div>
 
 <!-- Footer -->
